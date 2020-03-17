@@ -1,2 +1,2 @@
-EXCLUDES="README*.md LICENSE INSTALL.sh BUILD.sh"
+EXCLUDES="README*.md LICENSE INSTALL.sh BUILD.sh .github"
 DOTFILES_DIRS="$HOME/.dotfiles-local $HOME/.dotfiles"
