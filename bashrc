@@ -32,6 +32,15 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+# colorize man pages for better readability
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
 GIT_PS1_SHOWDIRTYSTATE=yes
 
 if [ "$(type -t __git_ps1)" != 'function' ]; then    
@@ -101,6 +110,14 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+# npm (Node Package Manager) completion
+# https://docs.npmjs.com/cli/completion
+
+if command -v npm &>/dev/null
+then
+  eval "$(npm completion)"
 fi
 
 # Include local bashrc
