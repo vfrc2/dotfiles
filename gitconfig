@@ -1,5 +1,3 @@
-[init]
-  templatedir = ~/.git_template
 [push]
   default = current
 [color]
@@ -17,13 +15,12 @@
   autocrlf = input
 [merge]
   ff = only
-[commit]
-  template = ~/.gitmessage
-[fetch]
-  prune = true
-[rebase]
-  autosquash = true
 [include]
   path = ~/.gitconfig.local
 [diff]
   colorMoved = zebra
+[credential]
+  helper = store
+[user]
+  email = vfrc29@gmail.com
+  name = Maxim Lyasnikov

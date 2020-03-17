@@ -1,0 +1,22 @@
+{
+    "editor.rulers": [
+        100
+    ],
+    "editor.autoIndent": "advanced",
+    "editor.formatOnType": true,
+    "editor.renderWhitespace": "boundary",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.shellArgs.linux": [
+        "-l"
+    ],
+    "terminal.integrated.env.linux": {
+        "PATH": "${env:PATH}:${workspaceFolder}/node_modules/.bin",
+        "EDITOR": "code -w"
+    },
+    "search.exclude": {
+        "**/.history": true
+    },
+    "files.exclude": {
+        "**/.history": true
+    }
+}
