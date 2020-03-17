@@ -17,3 +17,5 @@ rerun.txt
 tags
 tmp/**/*
 .history
+.pioenvs
+.piolibdeps

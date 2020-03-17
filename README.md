@@ -11,6 +11,13 @@ Install [rcm](https://github.com/thoughtbot/rcm):
     brew tap thoughtbot/formulae
     brew install rcm
 
+Debian-based:
+
+    wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
+    echo "deb https://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
+    sudo apt-get update
+    sudo apt-get install rcm
+
 Install the dotfiles:
 
     env RCRC=$HOME/.dotfiles/rcrc rcup
@@ -82,12 +89,6 @@ configuration:
 * Remove administrative debris (session name, hostname, time) in status bar.
 * Set prefix to `Ctrl+s`
 * Soften status bar color from harsh green to light gray.
-
-Build
------
-
-To build config just run `BUILD.sh`
-
 
 License
 -------
