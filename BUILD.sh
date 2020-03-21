@@ -23,7 +23,7 @@ rm -r build/
 mkdir build/
 cd build/
 
-ARTIFACT=release-$VERSION.tar.gz
+ARTIFACT=vfrc29-dotfiles-$VERSION.tar.gz
 
 tar -czvf $ARTIFACT \
 --exclude .git \
