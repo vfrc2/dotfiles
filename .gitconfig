@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
-  email = vfrc29@gmail.com
-  name = Maxim Lyasnikov
+  # email = vfrc29@gmail.com
+  # name = Maxim Lyasnikov
 [alias]
   aa = add --all
   ap = add --patch

@@ -1,1 +1,11 @@
 export PATH=$PATH:$HOME/.local/bin
+
+export GIT_CONFIG_COUNT=2
+export GIT_CONFIG_KEY_0=user.email
+export GIT_CONFIG_VALUE_0="vfrc29@gmail.com"
+export GIT_CONFIG_KEY_1=user.name
+export GIT_CONFIG_VALUE_1="Maxim Lyasnikov"
+
+if [ -f $HOME/.shellenv.local ]; then
+    source $HOME/.shellenv.local
+fi

@@ -1,16 +1,20 @@
-export PATH=$PATH:$HOME/Library/Python/3.8/bin:/opt/local/bin
+source /usr/local/share/antigen/antigen.zsh
 
-if [ -f "$HOME/.shellenv" ]; then
-    source "$HOME/.shellenv"
-fi
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
 
-if [ -f "$HOME/.shellenv.local" ]; then
-    source "$HOME/.shellenv.local"
-fi
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle pip
 
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-    
-    autoload -Uz compinit
-    compinit
-fi
+
+antigen bundle command-not-found
+
+# Load the theme.
+antigen theme spaceship-prompt/spaceship-prompt
+
+# Tell Antigen that you're done.
+antigen apply
+
+eval "$(starship init zsh)"
+
