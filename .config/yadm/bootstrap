@@ -1,0 +1,25 @@
+#!/bin/sh
+
+system_type=$(uname -s)
+
+if [ "$system_type" = "Darwin" ]; then
+  MY_VSCODE_SETTINGS_MAC="$HOME/Library/Application Support/Code/User/settings.json"
+  if [ -f "$MY_VSCODE_SETTINGS_MAC" ]; then
+    cp "$MY_VSCODE_SETTINGS_MAC" "$MY_VSCODE_SETTINGS_MAC.bak" && echo "Existed VSCode config copied to $MY_VSCODE_SETTINGS_MAC.bak"
+  fi
+  cp $HOME/.config/Code/User/settings.json "$MY_VSCODE_SETTINGS_MAC" && echo "VSCode config copied"
+fi
+
+if [ "$system_type" = "Darwin" ]; then
+
+  # install homebrew if it's missing
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing homebrew"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  fi
+
+  if [ -f "$HOME/.Brewfile" ]; then
+    echo "Updating homebrew bundle"
+    brew bundle --global
+  fi
+fi
