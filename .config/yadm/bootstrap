@@ -3,11 +3,20 @@
 system_type=$(uname -s)
 
 if [ "$system_type" = "Darwin" ]; then
-  MY_VSCODE_SETTINGS_MAC="$HOME/Library/Application Support/Code/User/settings.json"
-  if [ -f "$MY_VSCODE_SETTINGS_MAC" ]; then
-    cp "$MY_VSCODE_SETTINGS_MAC" "$MY_VSCODE_SETTINGS_MAC.bak" && echo "Existed VSCode config copied to $MY_VSCODE_SETTINGS_MAC.bak"
-  fi
-  cp $HOME/.config/Code/User/settings.json "$MY_VSCODE_SETTINGS_MAC" && echo "VSCode config copied"
+  VSCODE_SETTINGS_DIR="$HOME/.config/Code"
+  MY_VSCODE_SETTINGS_MAC="$HOME/Library/Application Support/Code"
+  echo "VSCode config link"
+  for file in $VSCODE_SETTINGS_DIR/**/* ; do  
+    if [ -f $file ]; then
+      fn=$file
+      echo "VSCode config already exist, $fn"
+      echo "if you want to override run"
+      echo "ln -f \"$fn\" \"$MY_VSCODE_SETTINGS_MAC\""
+    else
+      ln "$fn" "$MY_VSCODE_SETTINGS_MAC" && echo $file
+    fi
+  done
+  echo "Done"
 fi
 
 if [ "$system_type" = "Darwin" ]; then

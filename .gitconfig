@@ -1,6 +1,8 @@
-# This is Git's per-user configuration file.
+[core]
+	editor = code --wait
+  excludesfile = ~/.gitignore
 [user]
-  # email = vfrc29@gmail.com
+	# email = vfrc29@gmail.com
   # name = Maxim Lyasnikov
 [alias]
   aa = add --all
@@ -11,5 +13,15 @@
   pf = push --force-with-lease
   st = status
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-[init]
-	defaultBranch = master
+[diff]
+    tool = code
+[difftool "code"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[pull]
+	ff = only
+[push]
+	autoSetupRemote = true
+[credential]
+	helper = osxkeychain
+[http]
+	sslVerify = false

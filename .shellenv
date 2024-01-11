@@ -6,6 +6,9 @@ export GIT_CONFIG_VALUE_0="vfrc29@gmail.com"
 export GIT_CONFIG_KEY_1=user.name
 export GIT_CONFIG_VALUE_1="Maxim Lyasnikov"
 
+export BUNDLER_EDITOR="code -w"
+export EDITOR="code -w"
+
 if [ -f $HOME/.shellenv.local ]; then
     source $HOME/.shellenv.local
 fi

@@ -5,16 +5,20 @@ antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-antigen bundle pip
-
-
 antigen bundle command-not-found
+antigen bundle npm
+antigen bundle zsh-users/zsh-autosuggestions
 
-# Load the theme.
-antigen theme spaceship-prompt/spaceship-prompt
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Tell Antigen that you're done.
-antigen apply
+antigen apply 
 
 eval "$(starship init zsh)"
 
+autoload zmv
+
+if [ -f $HOME/.shellalias ]; then
+    source $HOME/.shellalias
+fi
