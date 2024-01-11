@@ -19,7 +19,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply 
 
 eval "$(starship init zsh)"
-
 autoload zmv
 
 if [ -f $HOME/.shellalias ]; then

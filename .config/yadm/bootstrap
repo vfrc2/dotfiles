@@ -3,16 +3,14 @@
 system_type=$(uname -s)
 
 if [ "$system_type" = "Darwin" ]; then
-  VSCODE_SETTINGS_DIR="$HOME/.config/Code/User"
-  MY_VSCODE_SETTINGS_MAC="$HOME/Library/Application Support/Code/User"
-  echo "VSCode config link"
-  for file in $VSCODE_SETTINGS_DIR/* ; do  
-    if ! ln -v "$file" "$MY_VSCODE_SETTINGS_MAC" ; then
-      echo "you can try"
-      echo "  ln -f \"$file\" \"$MY_VSCODE_SETTINGS_MAC\""
-    fi
-  done
-  echo "Done"
+  MY_VSCODE_SETTINGS_MAC="$HOME/Library/Application Support/Code/User/settings.json"
+  if [ -f "$MY_VSCODE_SETTINGS_MAC" ]; then
+    echo "VSCode config already exist, $MY_VSCODE_SETTINGS_MAC"
+    echo "if you want to override run"
+    echo "ln -f \"$HOME/.config/Code/User/settings.json\" \"$MY_VSCODE_SETTINGS_MAC\""
+ else
+    ln "$HOME/.config/Code/User/settings.json" "$MY_VSCODE_SETTINGS_MAC" && echo "VSCode config copied"
+  fi
 fi
 
 if [ "$system_type" = "Darwin" ]; then
@@ -43,7 +41,7 @@ fi
 
 if [ ! -f "$HOME/.config/tmux/plugins/tpm/README.md" ]; then
   echo Install tpm
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 else
   echo "tpm already instaled"
 fi
