@@ -32,3 +32,11 @@ if [ "$system_type" = "Darwin" ]; then
     brew bundle --global
   fi
 fi
+
+if [ -f "$(which apt)" ]; then
+  sudo apt install -y renameutils  exa fzf bat tmux zsh-antigen
+fi
+
+if [ ! -f "$(which starship)"]; then
+  curl -sS https://starship.rs/install.sh | sh
+fi

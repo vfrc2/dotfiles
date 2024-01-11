@@ -1,4 +1,8 @@
-source /usr/local/share/antigen/antigen.zsh
+if [ -f /usr/local/share/antigen/antigen.zsh ]; then
+    source /usr/local/share/antigen/antigen.zsh
+elif [ -f /usr/share/zsh-antigen/antigen.zsh ]; then
+    source /usr/share/zsh-antigen/antigen.zsh
+fi 
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -6,7 +10,6 @@ antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle command-not-found
-antigen bundle npm
 antigen bundle zsh-users/zsh-autosuggestions
 
 # Syntax highlighting bundle.
