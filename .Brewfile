@@ -1,10 +1,8 @@
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/portable-ruby"
 tap "homebrew/cask-fonts"
 
 brew "nmap"
-brew "python@3.11"
 brew "tmux"
 brew "zsh"
 brew "antigen"
@@ -14,8 +12,6 @@ brew "exa"
 brew "fzf"
 brew "bat"
 
-cask "keepassxc"
-cask "macfuse"
 cask "font-fira-code"
 cask "visual-studio-code"
 
