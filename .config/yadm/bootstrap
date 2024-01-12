@@ -35,5 +35,16 @@ if [ -f "$(which apt-get)" ]; then
 fi
 
 if [ ! -f "$(which starship)" ]; then
+  echo "Install starship"
   curl -sS https://starship.rs/install.sh | sh
+else
+  echo "starship already instaled"
 fi
+
+if [ ! -f "$HOME/.config/tmux/plugins/tpm/README.md" ]; then
+  echo Install tpm
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+else
+  echo "tpm already instaled"
+fi
+
