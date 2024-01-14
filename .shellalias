@@ -1,11 +1,11 @@
 alias ls="exa"
 alias ll="exa -l"
 
-if [ -f $(which bat) ]; then
+if [ -f "$(which bat)" ]; then
     alias cat="bat -p"
 fi
 
-if [ -f $(which batcat) ]; then
+if [ -f "$(which batcat)" ]; then
     alias cat="batcat -p"
 fi
 
