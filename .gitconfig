@@ -1,9 +1,9 @@
 [core]
-	editor = code --wait
+  editor = code --wait
   excludesfile = ~/.gitignore
 [user]
-	# email = vfrc29@gmail.com
-  # name = Maxim Lyasnikov
+  email = vfrc29@gmail.com
+  name = Maxim Lyasnikov
 [alias]
   aa = add --all
   ap = add --patch
@@ -14,14 +14,14 @@
   st = status
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [diff]
-    tool = code
+  tool = code
 [difftool "code"]
-    cmd = code --wait --diff $LOCAL $REMOTE
+  cmd = code --wait --diff $LOCAL $REMOTE
 [pull]
-	ff = only
+  ff = only
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [http]
-	sslVerify = false
+  sslVerify = false
