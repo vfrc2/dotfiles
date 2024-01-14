@@ -1,0 +1,7 @@
+alias ls="exa"
+alias ll="exa -l"
+alias cat="bat"
+
+if [ -f $HOME/.shellalias.local ]; then
+    source $HOME/.shellalias.local
+fi
