@@ -2,7 +2,9 @@ if [ -f /usr/local/share/antigen/antigen.zsh ]; then
     source /usr/local/share/antigen/antigen.zsh
 elif [ -f /usr/share/zsh-antigen/antigen.zsh ]; then
     source /usr/share/zsh-antigen/antigen.zsh
-fi 
+elif [ -f /usr/share/zsh/share/antigen.zsh ]; then
+    source /usr/share/zsh/share/antigen.zsh
+fi
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -23,8 +25,4 @@ autoload zmv
 
 if [ -f $HOME/.shellalias ]; then
     source $HOME/.shellalias
-fi
-
-if [ -f $HOME/.config/scripts/bash_tmux.sh ]; then
-    source $HOME/.config/scripts/bash_tmux.sh
 fi

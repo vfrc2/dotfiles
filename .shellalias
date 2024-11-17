@@ -1,5 +1,5 @@
-alias ls="exa"
-alias ll="exa -l"
+alias ls="lsd --icon=never"
+alias ll="lsd --icon=never -l"
 
 if [ -f "$(which bat)" ]; then
     alias cat="bat -p"

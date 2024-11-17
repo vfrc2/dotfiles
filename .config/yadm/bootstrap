@@ -29,7 +29,23 @@ fi
 
 if [ -f "$(which apt-get)" ]; then
   echo Install utils throught apt
-  sudo apt install -y renameutils exa fzf bat tmux zsh-antigen
+  sudo apt install -y renameutils lsd fzf bat tmux zsh-antigen
+elif [ -f "$(which pacman)" ]; then
+  echo Install utils throught pacman
+  sudo pacman -Sy renameutils lsd fzf bat tmux 
+  if [ -f "$(which yay)" ]; then 
+    echo yay alrteady installed
+  else
+    sudo pacman -Syu
+    mkdir /tmp/yay
+    cd /tmp/yay
+    curl -OJ 'https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=yay'
+    makepkg -si
+    cd
+    rm -rf /tmp/yay
+    yay --version
+  fi
+  yay -Sy antigen
 fi
 
 if [ ! -f "$(which starship)" ]; then
